@@ -1,5 +1,9 @@
 package BeastForm::Schema;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 

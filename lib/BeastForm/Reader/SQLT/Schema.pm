@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT::Schema;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 # ABSTRACT: Creates a SQL::Translator and reads from its schema
 
 use Moo;

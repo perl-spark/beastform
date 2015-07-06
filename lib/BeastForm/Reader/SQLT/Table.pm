@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT::Table;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use BeastForm::Reader::SQLT::Field;
 use BeastForm::Table;

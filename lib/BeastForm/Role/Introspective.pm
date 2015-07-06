@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Role::Introspective;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo::Role;
 use SQL::Translator;
 

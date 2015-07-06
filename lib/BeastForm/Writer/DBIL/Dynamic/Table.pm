@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Writer::DBIL::Dynamic::Table;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 # ABSTRACT: Configures a table in the DBIx::Lite Schema
 
 use Moo;

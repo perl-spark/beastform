@@ -1,5 +1,9 @@
 package BeastForm::Field;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 has name     => ( is => 'ro', required => 1 );

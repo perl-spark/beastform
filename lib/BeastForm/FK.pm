@@ -1,5 +1,9 @@
 package BeastForm::FK;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 has from      => (is => 'ro', required => 1);

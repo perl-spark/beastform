@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Role::DBIL;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo::Role;
 use DBIx::Lite;
 use DBIx::BeastForm::DBIL::Schema;

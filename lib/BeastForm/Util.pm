@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Util;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use parent 'Exporter';
 
 our @EXPORT_OK = qw(map_sth modulify make_dsn);

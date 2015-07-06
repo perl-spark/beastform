@@ -1,5 +1,9 @@
 package BeastForm::View;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 # ABSTRACT: The useful information we know about a view
 
 use Moo;

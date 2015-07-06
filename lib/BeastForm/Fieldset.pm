@@ -1,5 +1,9 @@
 package BeastForm::Fieldset;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 has table   => ( is => 'ro', required => 1, weak_ref => 1);

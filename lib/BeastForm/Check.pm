@@ -1,5 +1,9 @@
 package BeastForm::Constraint::Check;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 with 'BeastForm::Constraint';
 

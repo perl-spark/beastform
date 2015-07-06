@@ -1,5 +1,9 @@
 package BeastForm::Proc;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 has sql     => ( is => 'ro', required => 1 );

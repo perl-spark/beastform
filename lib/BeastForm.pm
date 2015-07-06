@@ -1,5 +1,9 @@
 package BeastForm;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use DBI;
 use List::Util qw(first);

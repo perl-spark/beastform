@@ -1,5 +1,9 @@
 package DBIx::BeastForm::DBIL::Table;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use DBIx::BeastForm::Util qw(modulify);
 
 use Package::Variant

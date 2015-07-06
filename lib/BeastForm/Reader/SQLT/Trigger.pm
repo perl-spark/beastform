@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Reader::SQLT::Trigger;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use BeastForm::Trigger;
 

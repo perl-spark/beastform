@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT::View;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use BeastForm::View;
 

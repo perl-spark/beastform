@@ -1,5 +1,9 @@
 package BeastForm::Driver;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 # ABSTRACT: Represents a DBD. Can make a connector
 
 use Moo;

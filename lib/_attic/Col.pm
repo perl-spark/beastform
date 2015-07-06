@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Col;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 
 has name => (

@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 # ABSTRACT: Uses L<SQL::Translator> to introspect a database
 
 use Moo;

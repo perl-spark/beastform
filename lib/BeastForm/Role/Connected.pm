@@ -1,5 +1,9 @@
 package DBIx::BeastForm::Role::Connected;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo::Role;
 use DBIx::Connector;
 

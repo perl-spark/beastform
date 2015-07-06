@@ -1,5 +1,9 @@
 package DBIx::BeastForm::DB;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use DBIx::Connector;
 use BeastForm::Driver;

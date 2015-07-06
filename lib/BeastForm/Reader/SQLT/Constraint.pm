@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT::Constraint;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use BeastForm::Key;
 use BeastForm::Check;

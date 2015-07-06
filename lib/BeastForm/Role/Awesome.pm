@@ -1,5 +1,9 @@
 package BeastForm::Role::Awesome;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo::Role;
 use BeastForm::Schema;
 

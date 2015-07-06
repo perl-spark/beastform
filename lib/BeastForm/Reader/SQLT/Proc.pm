@@ -1,5 +1,9 @@
 package BeastForm::Reader::SQLT::Proc;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use Beastform::Proc;
 

@@ -1,5 +1,9 @@
 package BeastForm::Writer::DBIL::Dynamic::Schema;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use DBIx::Lite::Schema;
 use BeastForm::Writer::DBIL::Dynamic::Table;
