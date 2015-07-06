@@ -1,0 +1,21 @@
+; vim: syntax=dosini
+name    = BeastForm
+author  = James Laver <james.laver@gmail.com>
+license = Perl_5
+copyright_holder = James Laver on time generously donated by Anomalio
+
+[@Author::KENTNL]
+; twitter_extra_hash_tags = 
+normal_form       = numify
+mantissa          = 6
+toolkit           = eumm
+toolkit_hardness  = soft
+bumpversions      = 1
+srcreadme         = pod
+;-remove           = Author::KENTNL::RecommendFixes
+-remove           = MetaData::BuiltWith
+
+[Munge::Whitespace]
+filename = LICENSE
+
+;authordep Pod::Weaver::Section::Contributors = 0
