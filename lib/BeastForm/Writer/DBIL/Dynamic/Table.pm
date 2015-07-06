@@ -1,3 +1,7 @@
+use 5.006;    # our
+use strict;
+use warnings;
+
 package DBIx::BeastForm::Writer::DBIL::Dynamic::Table;
 
 our $VERSION = '0.000001';
