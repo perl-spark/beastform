@@ -2,7 +2,7 @@ use 5.006;    # our
 use strict;
 use warnings;
 
-package DBIx::BeastForm::Reader::SQLT::Trigger;
+package BeastForm::Reader::SQLT::Trigger;
 
 our $VERSION = '0.000001';
 

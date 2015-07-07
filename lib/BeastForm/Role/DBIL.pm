@@ -2,7 +2,7 @@ use 5.006;    # our
 use strict;
 use warnings;
 
-package DBIx::BeastForm::Role::DBIL;
+package BeastForm::Role::DBIL;
 
 our $VERSION = '0.000001';
 
