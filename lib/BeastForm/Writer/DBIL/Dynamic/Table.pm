@@ -12,7 +12,7 @@ our $VERSION = '0.000001';
 
 use Moo;
 
-with 'DBIx::BeastForm::Role::Writer::Table';
+with 'BeastForm::Role::Writer::Table';
 
 has table => ( is => 'lazy' );
 

@@ -87,7 +87,7 @@ It's easy and we're friendly.
 5. Rebase from master: C<git fetch upstream && git rebase upstream/master>
 6. File a pull Request!
 
-=head2 find_drivers -> Hash[String -> DBIx::BeastForm::Driver]
+=head2 find_drivers -> Hash[String -> BeastForm::Driver]
 
 Returns a hash of names to Driver objects
 

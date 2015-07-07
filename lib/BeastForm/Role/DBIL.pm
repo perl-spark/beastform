@@ -10,11 +10,11 @@ our $VERSION = '0.000001';
 
 use Moo::Role;
 use DBIx::Lite;
-use DBIx::BeastForm::DBIL::Schema;
-use DBIx::BeastForm::DBIL::Builder::Dynamic;
-# use DBIx::BeastForm::DBIL::Builder::Static;
+use BeastForm::DBIL::Schema;
+use BeastForm::DBIL::Builder::Dynamic;
+# use BeastForm::DBIL::Builder::Static;
 
-with 'DBIx::BeastForm::Role::Introspective';
+with 'BeastForm::Role::Introspective';
 
 has namespace   => ( is => 'ro', required => 1  );
 
@@ -23,7 +23,7 @@ has namespace   => ( is => 'ro', required => 1  );
     package My::BeastForm;
     use Moo;
     use My::Config qw(config);
-    with 'DBIx::BeastForm::Role::DBIL;
+    with 'BeastForm::Role::DBIL;
     has '+username' => ( default => sub { config('username') } );
     has '+password' => ( default => sub { config('password') } );
     has '+extra' => (
@@ -35,13 +35,13 @@ has namespace   => ( is => 'ro', required => 1  );
 
 =head2 $bf->dynamic() -> Void
 
-Introspects the database and returns a L<DBIx::BeastForm::DBIL::DB>
+Introspects the database and returns a L<BeastForm::DBIL::DB>
 
 =cut
 
 sub dynamic {
   my ($self) = @_;
-  DBIx::BeastForm::DBIL::Builder::Dynamic->new(
+  BeastForm::DBIL::Builder::Dynamic->new(
     connector => $self->connector,
     schema => $self->schema,
     namespace => $self->namespace,

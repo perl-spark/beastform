@@ -2,7 +2,7 @@ use 5.006;    # our
 use strict;
 use warnings;
 
-package DBIx::BeastForm::Col;
+package BeastForm::Col;
 
 our $VERSION = '0.000001';
 
@@ -23,8 +23,8 @@ has table => (
   is => 'ro',
   isa => sub {
     local $_ = shift;
-    croak("Expected DBIx::BeastForm::Table, got: '$_'")
-      unless $_->isa('DBIx::BeastForm::Table');
+    croak("Expected BeastForm::Table, got: '$_'")
+      unless $_->isa('BeastForm::Table');
   },
   weak_ref => 1,
   required => 1,

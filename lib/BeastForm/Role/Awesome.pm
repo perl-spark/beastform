@@ -11,7 +11,7 @@ our $VERSION = '0.000001';
 use Moo::Role;
 use BeastForm::Schema;
 
-with 'DBIx::BeastForm::Role::Introspective';
+with 'BeastForm::Role::Introspective';
 
 has aweschema => (is => 'lazy');
 

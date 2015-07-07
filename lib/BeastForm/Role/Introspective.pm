@@ -11,7 +11,7 @@ our $VERSION = '0.000001';
 use Moo::Role;
 use SQL::Translator;
 
-with 'DBIx::BeastForm::Role::Connected';
+with 'BeastForm::Role::Connected';
 
 has schema => ( is => 'lazy' );
 

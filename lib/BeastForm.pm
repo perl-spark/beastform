@@ -103,7 +103,7 @@ It's easy and we're friendly.
 #   # $extra{
 # }
 
-=head2 find_drivers -> Hash[String -> DBIx::BeastForm::Driver]
+=head2 find_drivers -> Hash[String -> BeastForm::Driver]
 
 Returns a hash of names to Driver objects
 

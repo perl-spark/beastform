@@ -19,7 +19,7 @@ use Carp qw(croak);
 
 has driver => (
   is => 'ro', required => 1,
-  coerce => sub { ref $_[0] ? shift : DBIx::BeastForm::Driver->new(name => shift); },
+  coerce => sub { ref $_[0] ? shift : BeastForm::Driver->new(name => shift); },
 );
 
 has name => ( is => 'ro', required => 1  );
@@ -77,7 +77,7 @@ sub write_with {
 # sub dbs {
 #   my ($self) = @_;
 #   map {
-#     DBIx::BeastForm::DB->new(
+#     BeastForm::DB->new(
 #       dsn => $self->dsn, user => $self->user, pass => $self->pass,
 #       mode => $self->mode, connector => $self->connector,
 #       options => $self->options,
