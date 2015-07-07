@@ -14,7 +14,6 @@ use BeastForm::Driver;
 use BeastForm::Table;
 use BeastForm::Util qw(map_sth);
 use Carp qw(croak);
-use feature ':5.10';
 
 # ABSTRACT: Logical representation of a database
 

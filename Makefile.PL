@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.010000;
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -15,7 +15,7 @@ my %WriteMakefileArgs = (
   "DISTNAME" => "BeastForm",
   "EXE_FILES" => [],
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.010000",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "BeastForm",
   "PREREQ_PM" => {
     "BeastForm::Constraint" => 0,
@@ -37,7 +37,6 @@ my %WriteMakefileArgs = (
     "Moo::Role" => 0,
     "Package::Variant" => 0,
     "SQL::Translator" => 0,
-    "feature" => 0,
     "parent" => 0,
     "strict" => 0,
     "warnings" => 0
@@ -79,7 +78,6 @@ my %FallbackPrereqs = (
   "SQL::Translator" => 0,
   "Test::More" => "0.89",
   "Test::Most" => 0,
-  "feature" => 0,
   "parent" => 0,
   "strict" => 0,
   "warnings" => 0
