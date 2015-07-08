@@ -13,7 +13,7 @@ our $VERSION = '0.000001';
 use Moo;
 
 has pk      => ( is => 'ro', required => 1 );
-# has fks     => ( is => 'ro', required => 1 );
+has fks     => ( is => 'ro', required => 1 );
 # has checks  => ( is => 'ro', required => 1 );
 has name    => ( is => 'ro', required => 1 );
 has fields  => ( is => 'ro', required => 1 );
