@@ -39,6 +39,7 @@ sub _tables {
     $s->_add_table($t);
     push @trs, sub { $r->finalize_a($t); };
   }
+  # Finalise in order
   $_->() foreach (@trs);
   $self;
 }
