@@ -1,7 +1,7 @@
 # These files turn up as symlinks to somewhere. They are bad
 **/.#*
 .build
-BeastForm*
+/BeastForm*
 tmp/
 META.json
 MYMETA.json
