@@ -4,6 +4,10 @@ use warnings;
 
 package BeastForm::Reader::SQLT::Key;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo;
 use BeastForm::Key;
 use Hash::Ordered;

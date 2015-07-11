@@ -4,6 +4,10 @@ use warnings;
 
 package BeastForm::Role::Finalizer;
 
+our $VERSION = '0.000001';
+
+# AUTHORITY
+
 use Moo::Role;
 
 requires 'finalize_a';
