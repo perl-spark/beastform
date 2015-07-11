@@ -11,11 +11,7 @@ our $VERSION = '0.000001';
 use Moo;
 use DBIx::Lite::Schema;
 use BeastForm::Writer::DBIL::Dynamic::Table;
-with 'BeastForm::Role::Writer::Schema';
-
-has schema => (is => 'lazy');
-
-sub _build_schema { DBIx::Lite::Schema->new; }
+with 'BeastForm::Role::Process';
 
 sub tables {
   my ($self, @tables) = @_;
@@ -46,6 +42,10 @@ sub triggers {
   my ($self, @triggers) = @_;
   warn "Sorry, we don't support triggers yet\n"
     if @triggers;
+}
+
+sub go {
+  DBIx::Lite::Schema->new
 }
 
 1;

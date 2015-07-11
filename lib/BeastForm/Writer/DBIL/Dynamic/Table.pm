@@ -12,14 +12,7 @@ our $VERSION = '0.000001';
 
 use Moo;
 
-with 'BeastForm::Role::Writer::Table';
-
-has table => ( is => 'lazy' );
-
-sub _build_table {
-  my ($self) = @_;
-  $self->schema->table($self->in_table->name);
-}
+with 'BeastForm::Role::Process';
 
 sub pk {
   my ($self, @fields) = @_;
@@ -44,5 +37,10 @@ sub fields {
   my ($self, @fields) = @_;
 }
 
+sub go {
+  my ($self) = @_;
+  $self->schema->table($self->in_table->name);
+
+}
 1;
 __END__

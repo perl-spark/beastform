@@ -11,8 +11,6 @@ our $VERSION = '0.000001';
 use Moo::Role;
 use BeastForm::Schema;
 
-with 'BeastForm::Role::Introspective';
-
 has aweschema => (is => 'lazy');
 
 sub table {
