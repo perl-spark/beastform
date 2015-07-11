@@ -17,7 +17,8 @@ my $ti = $s->tables->iterator;
   my ($key, $t) = $ti->();
   is($key, 'test1', "Got test1 first");
   isa_ok($t->pk, 'BeastForm::Key', 'PK is a BeastForm::Key');
-  is_deeply([map $_->name, $t->pk->fields], [ qw( id ) ]);
+  is_deeply([map $_->name, @{$t->pk->fields}], [ qw( id ) ]);
+  diag("Field tests:");
   my $fi = $t->fields->iterator;
   {
     my ($k2, $f) = $fi->();
@@ -26,24 +27,37 @@ my $ti = $s->tables->iterator;
     is($k2, 'text_field');
     ok(!$fi->(), "No more fields");
   }
-  my $fks = $t->fks;
-  ok (!$fks->keys, "There are no fks on test1");
+# These should all be accompanied by further checks
+# They should then be replicated across all tables
+# If in doubt refer to the sql
+  is (scalar $t->keys->keys, 0, "There are no keys on test1");
+#   is (scalar $t->checks->keys, 1, "There is one check constraint on test");
+#   is (scalar $t->indices->keys, 1, "There is one index on test");
+  is (scalar $t->outs->keys, 0, "There are no outs on test1");
+  is (scalar $t->ins->keys, 2, "There are two ins on test1");
 }
-# {
-#   my ($key, $t) = $ti->();
-#   is($key, 'test2', "Got test2 next");
-#   my $fi = $t->fields->iterator;
-#   {
-#     my ($k2, $f) = $fi->();
-#     is($k2, 'id');
-#     ($k2, $f) = $fi->();
-#     is($k2, 'test1_id');
-#     ok(!$fi->(), "No more fields");
-#   }
-# }
-# {
-#   my ($key, $t) = $ti->();
-#   is($key, 'test3');
+{
+  my ($key, $t) = $ti->();
+  is($key, 'test2', "Got test2 next");
+  # diag("Field tests:");
+  # my $fi = $t->fields->iterator;
+  # {
+  #   my ($k2, $f) = $fi->();
+  #   is($k2, 'id');
+  #   ($k2, $f) = $fi->();
+  #   is($k2, 'test1_id');
+  #   ok(!$fi->(), "No more fields");
+  # }
+  is (scalar $t->keys->keys, 0, "There are no keys on test2");
+#  is (scalar $t->outs->keys, 0, "There are no outs on test2");
+}
+{
+  my ($key, $t) = $ti->();
+  is($key, 'test3', "Then test3");
+#  is (scalar $t->keys->keys, 1, "There is one key on test3");
+#  is (!$t->outs->keys, 0, "There are no outs on test3");
+
+#   diag("Field tests:");
 #   my $fi = $t->fields->iterator;
 #   {
 #     my ($k2, $f) = $fi->();
@@ -56,10 +70,12 @@ my $ti = $s->tables->iterator;
 #     is($k2, 'extra');
 #     ok(!$fi->(), "No more fields");
 #   }
-# }
-# {
-#   my ($key, $t) = $ti->();
-#   is($key, 'test4');
+}
+{
+  my ($key, $t) = $ti->();
+  is($key, 'test4', "Finally test4");
+#  is (scalar $t->keys->keys, 1, "There is one key on test4");
+#  is (scalar $t->outs->keys, 0, "There are no outs on test4");
 #   my $fi = $t->fields->iterator;
 #   {
 #     my ($k2, $f) = $fi->();
@@ -70,7 +86,7 @@ my $ti = $s->tables->iterator;
 #     is($k2, 'unique_int');
 #     ok(!$fi->(), "No more fields");
 #   }
-# }
+}
 # while ( my ( $name, $t ) = $ti->() ) {
 #    diag("Got table: '$name'");
 #    ok(! ref $t->name, "Name is a string");

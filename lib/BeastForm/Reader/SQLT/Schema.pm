@@ -17,6 +17,7 @@ use BeastForm::Reader::SQLT::View;
 use BeastForm::Reader::SQLT::Proc;
 use BeastForm::Reader::SQLT::Trigger;
 use Hash::Ordered;
+use Data::Dumper 'Dumper'; # REMOVEME
 
 with 'BeastForm::Role::Process';
 
@@ -25,22 +26,26 @@ has in_schema => (
   handles => [ qw( name ) ], # Cheap accessor
 );
 
-sub tables {
-  my ($self) = @_;
-  Hash::Ordered->new(
-    map @{$_},
-    sort { $a->[0] cmp $b->[0] }
-    map [
-      $_ => BeastForm::Reader::SQLT::Table->new(
-        in_schema => $self->in_schema,
-        in_table => $self->in_schema->get_table($_),
-      )->go
-    ], $self->in_schema->get_tables
-  )
+sub _tables {
+  my ($self, $s) = @_;
+  my @trs;
+  foreach my $in_t (sort map $_->name, $self->in_schema->get_tables) {
+    my $r = BeastForm::Reader::SQLT::Table->new(
+      schema => $s,
+      in_schema => $self->in_schema,
+      in_table => $self->in_schema->get_table($in_t),
+    );
+    my $t = $r->go;
+    $s->_add_table($t);
+    push @trs, sub { $r->finalize_a($t); };
+  }
+  $_->() foreach (@trs);
+  $self;
 }
 
-sub views {
-  my ($self) = @_;
+sub _views {
+  my ($self, $s) = @_;
+  $self;
   # Hash::Ordered->new(
   #   map @{$_},
   #   sort { $a->[0] cmp $b->[0] }
@@ -53,8 +58,9 @@ sub views {
   # );
 }
 
-sub procs {
-  my ($self) = @_;
+sub _procs {
+  my ($self, $s) = @_;
+  $self;
   # Hash::Ordered->new(
   #   map @{$_},
   #   sort { $a->[0] cmp $b->[0] }
@@ -67,8 +73,9 @@ sub procs {
   # );
 }
 
-sub triggers {
-  my ($self) = @_;
+sub _triggers {
+  my ($self, $s) = @_;
+  $self;
   # Hash::Ordered->new(
   #   map @{$_},
   #   sort { $a->[0] cmp $b->[0] }
@@ -83,13 +90,12 @@ sub triggers {
 
 sub go {
   my ($self) = @_;
-  BeastForm::Schema->new(
-    name     => $self->name,
-    procs    => $self->procs,
-    views    => $self->views,
-    tables   => $self->tables,
-    triggers => $self->triggers,
-  );
+  my $s = BeastForm::Schema->new( name => $self->name );
+  $self->_tables($s)
+       ->_views($s)
+       ->_procs($s)
+       ->_triggers($s);
+  $s;
 }
 
 1;
