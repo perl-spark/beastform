@@ -18,9 +18,6 @@ my %WriteMakefileArgs = (
   "MIN_PERL_VERSION" => "5.006",
   "NAME" => "BeastForm",
   "PREREQ_PM" => {
-    "BeastForm::Role::Introspective" => 0,
-    "BeastForm::Role::Writer::Schema" => 0,
-    "BeastForm::Role::Writer::Table" => 0,
     "Carp" => 0,
     "DBI" => 0,
     "DBIx::Connector" => 0,
@@ -50,9 +47,6 @@ my %WriteMakefileArgs = (
 
 
 my %FallbackPrereqs = (
-  "BeastForm::Role::Introspective" => 0,
-  "BeastForm::Role::Writer::Schema" => 0,
-  "BeastForm::Role::Writer::Table" => 0,
   "Carp" => 0,
   "DBI" => 0,
   "DBIx::Connector" => 0,
